@@ -3532,6 +3532,7 @@ function apply_arg_prefix(desync)
 ```
 
 Performs substitution of argument values from `desync.arg` that start with `%`, `#`,  `\`.
+Multiple calls are safe but do not update desync.arg if blobs were changed.
 
 ### apply_execution_plan
 
