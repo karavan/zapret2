@@ -1327,8 +1327,8 @@ bool QUICDefragCrypto(const uint8_t *clean,size_t clean_len, uint8_t *defrag,siz
 					ranges[j].offset = MIN(ranges[i].offset, ranges[j].offset);
 					ranges[j].len = MAX(r1,r2) - ranges[j].offset;
 					// delete element i
-					memmove(ranges+i, ranges+i+1, (range-i-1)*sizeof(*ranges));
 					range--;
+					memmove(ranges+i, ranges+i+1, (range-i)*sizeof(*ranges));
 					//printf("intersected %llu-%llu\n",ranges[j].offset,ranges[j].offset+ranges[j].len);
 					//for(int k=0 ; k<range ; k++)
 					//	printf("rangeX %llu-%llu\n",ranges[k].offset,ranges[k].offset+ranges[k].len);
