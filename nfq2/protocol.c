@@ -1303,6 +1303,12 @@ bool QUICDefragCrypto(const uint8_t *clean,size_t clean_len, uint8_t *defrag,siz
 
 			found=true;
 			pos+=sz;
+
+			// remove exact duplicates early to save cpu
+			for(i=0;i<range;i++)
+				if (ranges[i].offset==offset && ranges[i].len==sz)
+					continue;
+
 			ranges[range].offset = offset;
 			ranges[range].len = sz;
 			range++;
