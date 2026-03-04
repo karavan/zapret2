@@ -1269,7 +1269,7 @@ bool QUICDefragCrypto(const uint8_t *clean,size_t clean_len, uint8_t *defrag,siz
 	uint8_t *defrag_data = defrag+10;
 	size_t defrag_data_len = *defrag_len-10;
 	uint8_t ft;
-	uint64_t offset,sz,szmax=0,zeropos=0,pos=0,r1,r2;
+	uint64_t offset,sz,szmax=0,zeropos=0,pos=0;
 	bool found=false;
 	struct range64 ranges[MAX_DEFRAG_PIECES];
 	int i,j,range=0;
